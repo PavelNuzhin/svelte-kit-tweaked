@@ -25,14 +25,31 @@ export function normalize_error(error) {
 
 /**
  * @param {unknown} error
+ * @returns {number}
  */
 export function get_status(error) {
-	return error instanceof HttpError || error instanceof SvelteKitError ? error.status : 500;
+	if(error instanceof HttpError || error instanceof SvelteKitError)
+		return error.status;
+
+	if(error instanceof Object && 'status' in error && typeof error.status === 'number')
+		return error.status;
+
+	return 500;
 }
 
 /**
  * @param {unknown} error
+ * @returns {string}
  */
 export function get_message(error) {
-	return error instanceof SvelteKitError ? error.text : 'Internal Error';
+	if(error instanceof SvelteKitError)
+		return error.text;
+
+	if(error instanceof Object && 'error' in error)
+		error = error.error;
+	
+	if(error instanceof Object && 'message' in error && typeof error.message === 'string')
+		return error.message;
+
+	return 'Internal Error';
 }
