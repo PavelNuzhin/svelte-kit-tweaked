@@ -1,5 +1,32 @@
 # @sveltejs/kit
 
+## 2.8.0
+### Minor Changes
+
+
+- feat: add helper to identify `ActionFailure` objects ([#12878](https://github.com/sveltejs/kit/pull/12878))
+
+## 2.7.7
+### Patch Changes
+
+
+- fix: update link in JSDoc ([#12963](https://github.com/sveltejs/kit/pull/12963))
+
+## 2.7.6
+### Patch Changes
+
+
+- fix: update broken links in JSDoc ([#12960](https://github.com/sveltejs/kit/pull/12960))
+
+## 2.7.5
+### Patch Changes
+
+
+- fix: warn on invalid cookie name characters ([#12806](https://github.com/sveltejs/kit/pull/12806))
+
+
+- fix: when using `@vitejs/plugin-basic-ssl`, set a no-op proxy config to downgrade from HTTP/2 to TLS since `undici` does not yet enable HTTP/2 by default ([#12907](https://github.com/sveltejs/kit/pull/12907))
+
 ## 2.7.4
 ### Patch Changes
 
